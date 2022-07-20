@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="oJYsVhTUyVz6ya4OkoH9-o4l_h9_LKLWCqfwfEgpqrE" />
+
+        <!-- ===== <link rel="stylesheet" href="assets/css/styles.css">===== -->
+         <link rel="stylesheet" href="assets/css/works/style.css"> 
+         <link rel="stylesheet" href="assets/css/works/hover-style.css"> 
+        
+<style>
+#portfolio {
+
+    margin: 10px;
+    -webkit-column-count: 1; 
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-gap: 40px;
+    -moz-column-gap: 40px;
+    column-gap: 30px;
+    -webkit-column-width:33.33333333333333%;
+    -moz-column-width: 33.33333333333333%;
+    column-width:33.33333333333333%;
+}
+.tile { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: all 350ms ease;
+    transition: all 350ms ease;
+    
+}
+
+
+
+
+
+.scale-anm {
+  transform: scale(1);
+}
+
+
+
+.tile img {
+    width: 500px;
+    height: 250px;
+    margin-bottom: 20px;
+    box-shadow: 7px 7px 20px rgba(0,0,0,0.6);
+     border-radius: 15px;
+     
+}
+
+.tile:hover{
+    transform:scale(1.1);
+}
+
+
+
+.btn {
+    
+    font-size: 15sp;
+    font-weight: normal;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    line-height: normal;
+    padding: .5rem 1rem;
+    margin: 2px;
+    height: auto;
+    
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    color: #555;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 3px;
+}
+
+.btn:hover {
+  text-decoration: none;
+  background:  #3e6ff4;
+  color: #fff;
+box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+}
+
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.active{
+  background: #3e6ff4;
+  color: #fff;
+  border: none
+}
+.tcenter, .toolbar{
+  text-align: center;
+  margin:12px;
+  margin-bottom:30px;
+  padding:10px;
+  display: center;
+  flex-wrap: wrap;
+  height: 70px;
+  width:100%;
+  align-content: center;
+ 
+
+}
+
+.top{
+  margin-bottom: 50px;
+} 
+
+
+
+
+
+
+.tile iframe {
+    width: 500px;
+    height: 250px;
+    margin-bottom: 20px;
+    box-shadow: 7px 7px 20px rgba(0,0,0,0.6);
+     border-radius: 15px;
+     display:none;
+}
+.hideIT{
+   
+}
+.hideIT p{
+    display:none;
+}
+.invisible{
+    display:none;
+}
+</style>
+
+<!--==== style popup-view ====-->
+   <style>
+       
+
+.gallery{
+    width: 80%;
+    height: 90vh;
+    max-width: 1600px;
+    max-height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-image{
+    width: 30%;
+    height: calc(50% - 20px);
+    min-width: 300px;
+    min-height: 200px;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s;
+}
+
+/* popup */
+/*
+.popup{
+    margin-top:40px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 80%;
+    max-width: 1600px;
+    height: 90vh;
+    max-height: 800px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    overflow: hidden;
+    transition: 1s;
+    opacity: 0;
+}
+
+.popup.good{
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.popup.good .close-btn,
+.popup.good .image-name,
+.popup.good .index,
+.popup.good .large-image,
+.popup.good .arrow-btn{
+    opacity: 1;
+    transition: opacity .5s;
+    transition-delay: 1s;
+}
+
+.top-bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-weight: 300;
+}
+
+.image-name{
+    opacity: 0;
+}
+
+.close-btn{
+    opacity: 0;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f00;
+    cursor: pointer;
+}
+
+.arrow-btn{
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.left-arrow{
+    left: 10px;
+}
+
+.right-arrow{
+    right: 10px;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.arrow-btn:hover{
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.index{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 80px;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.4);
+    opacity: 0;
+}
+
+.large-image{
+    margin-top: 5%;
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    opacity: 0;
+}
+       */
+   </style>
+  <style>
+.holder{
+    position:relative;
+    width:1100px;
+    display:flex;
+    flex-wrap:wrap;
+    
+}
+
+  </style>
+
+<style>
+.tile {
+  position: relative;
+}
+
+.images {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.tile:hover .images {
+  opacity: 0.3;
+}
+
+.tile:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.4);
+     border-radius: 15px;
+   
+}
+.text2 {
+  background-color: #04AA6D;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.4);
+     border-radius: 15px;
+}
+</style>
+
+
+
+
+
+<!-- video popup -->
+<style>
+.popup{
+    text-align:center;
+    display:center;
+    justify-content:center;
+    bottom: 125%;
+
+
+}
+.popup .popuptext {
+  
+    display:center;
+    justify-content:center;
+    
+visibility: hidden;
+background-color: #555;
+color: #fff;
+text-align: center;
+border-radius: 6px;
+padding: 8px 0;
+z-index: 1;
+bottom: 125%;
+left: 50%;
+
+
+width:500px;
+height:250px;
+}
+.popup .show {
+    display:center;
+    justify-content:center;
+visibility: visible;
+-webkit-animation: fadeIn 1s;
+animation: fadeIn 1s;
+}
+@-webkit-keyframes fadeIn {
+from {opacity: 0;} 
+to {opacity: 1;}
+}
+@keyframes fadeIn {
+from {opacity: 0;}
+to {opacity:1 ;}
+}
+</style>
+
+
+
+
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <!-- =====Web ICONS===== -->
+<link rel = "icon" type = "image/png" href = "https://www.seekpng.com/png/full/227-2274404_design-icon-png.png">
+
+        <title>Logo Designer Tanver Hossain</title>
+        
+<link href="https://www.seekpng.com/png/full/227-2274404_design-icon-png.png" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="description" content="Tanver Hossain is an Bangladeshi graphics designer who have a excellent working experience home and abort country-wide" />
+
+<meta name="keywords" content="Tanver Hossain, Tanver Hossain Graphics Designer, Graphics Designer Tanver,Tanver Graphics, Tanver Hossain Logo,Tanver Logo Designing, Tanver Hossain Graphics tvportfolio, Tanver Graphics Work, Bangladeshi Graphics Designer, Tanver Graphics Work,Tanver Professional Logo,Tanver Design,Tanver Designing">
+<meta name="author" content="Tanver Hossain">
+
+<link rel="canonical" href="https://tvportfolio.ml/" />
+<link rel="next" href="https://tvportfolio.ml/works.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Graphics Designer Tanver" />
+<meta property="og:description" content="Tanver Hossain. Graphics Designer and IT Expert." />
+<meta property="og:url" content="https://tvportfolio.ml/" />
+<meta property="og:site_name" content="tvportfolio.ml" />
+<meta property="og:image" content="https://www.seekpng.com/png/full/227-2274404_design-icon-png.png" />
+<meta name="twitter:card" content="summary"/>     
+        
+        
+        
+        
+    </head>
+    
+        <!-- </body> -->
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="/index.html" class="nav__logo">Tanver</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="/index.html#home" class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="/index.html#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="/skills.html" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="/works.html" class="nav__link active">Work</a></li>
+                        <li class="nav__item"><a href="/cv.html" class="nav__link">CV</a></li>
+                        <li class="nav__item"><a href="/contact.html" class="nav__link">Contact</a></li>
+                        <!-- <li class="nav__item"><a href="/shop.html" class="nav__link">Shop</a></li>-->
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+         <!--===== WORK =====-->
+          <section class="worksec" id="work">
+            <div class="container">
+                <h2 class="section-title">Works</h2>
+
+
+
+
+      <div class="toolbar mb2 mt2">
+          
+        <button class="btn fil-cat active" href="" data-rel="all">All</button>
+        <button class="btn fil-cat" data-rel="phone">Logo Design</button>
+        <button class="btn fil-cat" data-rel="camera">Web Design</button>
+        <button class="btn fil-cat" data-rel="others">Others</button>
+        
+        <button class="btn fil-cat" data-rel="videos">Video Preview</button>
+      </div> 
+            
+      <div style="clear:both;"></div>   
+      
+      
+
+    
+    
+      
+       <div id="portfolio">
+           
+         
+         
+      <div class="tile scale-anm phone all">
+           
+          <img src="assets/img/works/quranfa.jpg" alt="" />
+          
+        </div>
+        
+        
+        <div class="tile scale-anm phone camera all">  
+       
+          <img src="assets/img/works/okia.jpg" alt="" />
+        </div>
+        
+        <div class="tile scale-anm phone all" id="moin"> 
+          
+          <img src="assets/img/works/logo2.jpg"  alt="Moin Fashion Logo"/>
+        
+        </div>
+         <div class="tile scale-anm phone all">  
+          
+          <img src="assets/img/works/logo3.jpg" alt="Ninvir Craft Logo" />
+   
+        </div>
+        <div class="tile scale-anm phone all">
+                
+          <img src="assets/img/works/logo4.jpg" alt="" />
+        </div>
+     <div class="tile scale-anm phone all">
+                
+          <img src="assets/img/works/logo5.jpg" alt="" />
+        </div>
+        <div class="tile scale-anm phone all">  
+       
+          <img src="assets/img/works/logo6.jpg"  alt="Graphics Designer Tanver" />
+          </div>
+          <div class="tile scale-anm phone all">  
+       
+          <img src="assets/img/works/logo7.jpg"  alt="" />
+          </div>
+         <div class="tile scale-anm phone all">  
+       
+          <img src="assets/img/works/logo8.jpg"  alt="" />
+          </div>
+      <div class="tile scale-anm phone camera all">  
+       
+          <img src="assets/img/works/logo10.jpg"  alt="" />
+          </div>
+          
+      <div class="tile scale-anm phone all">  
+       
+          <img src="assets/img/works/logo12.jpg"  alt="" />
+          </div>
+      <div class="tile scale-anm phone camera all">  
+       
+          <img src="assets/img/works/logo11.jpg"  alt="Graphics Designer Tanver" />
+          </div>
+     
+     
+             <div class="tile scale-anm camera all">
+          <img src="assets/img/works/web2.jpg" alt="" />
+          </div>
+             <div class="tile scale-anm camera all">
+          <img src="assets/img/works/id-card2.jpg" alt="" />
+          </div>
+          <div class="tile scale-anm camera all">
+          <img src="assets/img/works/web3.jpg"  alt="" />
+          </div>
+          
+           <div class="tile scale-anm camera all">
+          <img src="assets/img/works/web4.jpg"  alt="" />
+          </div>
+          
+   <div class="tile scale-anm phone camera all">  
+       
+          <img src="assets/img/works/logo9.jpg"  alt="Graphics Designer Tanver" />
+          </div>
+          
+          
+          
+      <div class="tile scale-anm others all">
+          <img src="assets/img/works/books1.png"  alt="" />
+        </div>
+        <div class="tile scale-anm camera all">
+          <img src="assets/img/works/id-card3.jpg" alt="" />
+          </div>
+    
+        <div class="tile scale-anm camera all">
+          <img src="assets/img/works/web1.jpg" alt="" />
+          </div>
+         <div class="tile scale-anm camera all">
+          <img src="assets/img/works/id-card1.jpg" alt="" />
+        </div>
+     
+       
+       
+       
+       
+       
+         <div class="tile scale-anm camera videos all">
+             
+          <img src="assets/img/works/id-card1.jpg" class="images" />
+  <div class="middle">
+    <div class="text">
+        <div class="popup" onclick="myFunction()" ><button class="text2">Preview</button>
+    
+    <video class="popuptext" id="myPopup" width="300" height="200"  >
+<source src="assets/videos/intro1.mp4" type="video/mp4">
+</video>
+    </div>
+    
+    </div>
+  </div>
+  </div>
+       
+     
+       
+       
+       
+       
+       
+       
+    <!--     <div class="tile scale-anm videos">
+<iframe src="assets/videos/intro1.mp4" frameborder="0"></iframe>
+
+          
+        </div>-->
+       
+      </div>
+          
+      <div style="clear:both;"></div>
+      </div>
+      
+      
+      
+
+
+         
+</section>
+<div>
+    <div class="hideIT"> <p class="invisible"> I am Graphics Designer Tanver</p></div>
+</div>
+  <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">Tanver</p>
+            <div class="footer__social">
+                <a href="https://facebook.com/rthtv007" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                <a href="https://instagram.com/tanver.247" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                
+            </div>
+            <p class="footer__copy">&#169; RTH. All rigths reserved</p>
+        </footer>
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+         
+      <script src="assets/js/works/jquery-3.4.1.min.js" type="text/javascript"></script>
+      <script src="assets/js/works/script.js" type="text/javascript"></script>
+    
+    
+    
+<!-- video popup -->
+   <script>
+function myFunction() {
+var popup = document.getElementById("myPopup");
+popup.classList.toggle("show");
+
+if (popup.paused){ 
+    popup.play(); 
+    }
+  else{ 
+    popup.pause();
+    }
+ 
+}
+</script> 
+      
+    <script>
+        
+const images = [...document.querySelectorAll('.image')];
+
+// popup
+
+const popup = document.querySelector('.popup');
+const closeBtn = document.querySelector('.close-btn');
+const imageName = document.querySelector('.image-name');
+const largeImage = document.querySelector('.large-image');
+const imageIndex = document.querySelector('.index');
+
+
+let index = 0; // will track our current image;
+/*<!--
+images.forEach((item, i) => {
+    item.addEventListener('click', () => {
+        updateImage(i);
+        popup.classList.toggle('good');
+    })
+})
+
+const updateImage = (i) => {
+    let path = `assets/img/works/logo${i+1}.jpg`;
+    largeImage.src = path;
+    
+    largeImage.path="Preview";
+ -->*/
+ // <!---->
+   
+
+document.querySelectorAll('.image').popup.classList.toggle('good');
+   
+   
+   
+    imageName.innerHTML = "Preview";
+    
+    index = i;
+}
+
+closeBtn.addEventListener('click', () => {
+    popup.classList.toggle('good');
+})
+
+
+        
+        
+    </script>
+    
+      
+    <!-- </body> -->
+</html>
+
+
+
+
+
+

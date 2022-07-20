@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Portfolio of Tanver</title>
+    </head>
+    
+        <!-- </body> -->
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">Ninvir Craft</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                      <!--=====   <li class="nav__item"><a href="/index.html" class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="/index.html#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="/skills.html" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href=/index.html"#work" class="nav__link">Work</a></li>
+                        <li class="nav__item"><a href="/cv.html" class="nav__link">CV</a></li>
+                        <li class="nav__item"><a href="/contact.html" class="nav__link">Contact</a></li> =====-->
+                         <li class="nav__item"><a href="/shop.html" class="nav__link active">Shop</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+        
+        
+        
+  
+   <!--===Style(CSS)=======================================================-->
+    <link rel="stylesheet" type="text/css"  href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/css/lightslider.min.css">
+    <style>
+        body1{
+            margin-top: 0px;
+            padding: 0px;
+        }
+        
+        .products-slider{
+            background-color: #f5f5f7;
+            padding: 0px 20px;
+            box-sizing: border-box;
+        }
+        .slider-heading{
+            font-family:Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0px auto;
+          	padding:0px 20px;
+        }
+        .slider-heading h3{
+            font-size: 1.75rem;
+            color: #1d1d1f;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+          line-height:34px;
+        }
+        .slider-heading h3 span{
+            color: #6e6e73;
+        }
+        .product-box{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            text-decoration: none;
+            background-color: #ffffff;
+            border-radius: 20px;
+            margin: 20px;
+            margin-top: 100px;
+            padding: 25px;
+            box-sizing: border-box;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.08);
+            transition: all ease 0.3s;
+            overflow: hidden;
+        }
+        .product-box:hover{
+            box-shadow: 2px 2px 18px rgba(0,0,0,0.10);
+            transform: scale(1.008);
+            transition: all  0.3s ease;
+        }
+        .product-box strong{
+            color: #29292c;
+            font-size: 1.75rem;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            margin-top: 24px;
+        }
+        .product-box img{
+            width: 210px;
+          	height:250px;
+   			padding:20px 0px;
+            object-fit: contain;
+            object-position: center;
+            margin: 20px auto;
+        }
+        .available-colors{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .available-colors .product-color{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: flex;
+            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: inset 2px 2px 30px rgba(0,0,0,0.03);
+            margin: 3px;
+        }
+        .buy-price{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0px 0px 0px;
+        }
+        .buy-price p{
+            color: #6e6e73;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.9rem;
+          	max-width:250px;
+            line-height:20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .product-box a{
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+        .buy-price .buy-btn{
+            color: #ffffff;
+            background-color: #0071e3;
+            text-decoration: none;
+            width: 80px;
+            height: 40px;
+          	padding:0px;
+          	margin:0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+      .lSPager{
+      	display:none;
+      }
+      .lSAction > a {
+        
+        background-color:#00000033;
+        width:50px;
+        height:50px;
+        border-radius:50%;
+        opacity:0.8;
+        background-image:none;
+        display: flex;
+        justify-content: center;
+         align-items: center;
+      }
+      .lSAction > a::after{
+        position:absoult;
+        content:'';
+        margin:auto;
+        border: solid #ffffff;
+ 		border-width: 0 4px 4px 0;
+  		display: inline-block;
+  		padding: 5px;
+      }
+      .lSAction > .lSPrev::after {
+  		transform: rotate(135deg);
+  		-webkit-transform: rotate(135deg);
+		}
+      
+      .lSAction > .lSNext::after {
+  		transform: rotate(-45deg);
+  		-webkit-transform: rotate(-45deg);
+		}
+        .explore-products{
+        height: 530px;
+        position: relative;
+        box-shadow: 2px 2px 15px rgba(0,0,0,0.10);
+        box-sizing:border-box;
+                }
+        .explore-products strong{
+        z-index: 2;
+         }
+        .explore-img{
+        width:100% !important;
+        height: 100% !important;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+        }
+        .explore-img img{
+        width:100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        object-position: center;
+        margin: 0px;
+        padding: 0px;
+            }
+        /*making-responsive-css-------*/
+        @media(max-width:600px){
+            .slider-heading h3{
+                font-size: 21px;
+            }        
+            .product-box{
+                width: 310px;
+                margin: 10px;
+                box-sizing: border-box;
+            }
+            .explore-products{
+                height: 427px;
+            }
+          .product-box img{
+          		height:190px;
+          		width:160px;
+          padding:0px;}
+            .product-box strong{
+                font-size: 21px;
+            }
+        
+       
+        .lSAction > a{
+            display:none;
+        }
+        .products-slider{
+            background-color: #f5f5f7;
+            padding: 0px;
+            margin:0px;
+            padding: 10px;
+        }
+    }
+    @media(max-width:400px){
+        .product-box{
+                width: 280px;
+            }
+            .buy-btn{
+                font-size: 0.8rem;
+            }
+    }
+    @media(max-width:324px){
+        .product-box{
+            width: 225px;
+        }
+        .product-box img{
+            width: 140px;
+          	height:165px;
+        }
+        .explore-products{
+            height: 445px;
+        }
+        .buy-price{
+            flex-direction: column;
+        }
+        .buy-price .buy-btn{
+            width: 100%;
+        }
+    }
+    </style>
+    <!--****css-end***---->
+    <!--===Product-section=1(HTML)===================================================================-->
+    <section class="products-slider" >
+        <!--heading-------------------------------->
+       
+        <!--product-container---------------------->
+        <div class="product-container">
+            <!--==slider-===============================----->
+            <ul class="autoWidth" class="cs-hidden">
+            <!--==card===========================-->
+            <li class="item-a">
+            
+            <div class="product-box">
+                <a href="/products.html"><!--**link**demo-->
+                <!--heading----->
+                <strong id="t1">Panda Mask</strong>
+                <!--img--------->
+               <img alt="" src="https://1.bp.blogspot.com/-qcHJ7dRlxR0/YRtlM-B4xaI/AAAAAAAAAAM/is73fwmKC-Em-H-KtHXkvRdIrFADjZ7UgCLcBGAsYHQ/s400/iphone.png"/>
+                <!--colors------>
+                <div class="available-colors">
+                    <div class="product-color" style="background-color: #5c5b58;"></div>
+                    <div class="product-color" style="background-color: #e5e6e2;"></div>
+                    <div class="product-color" style="background-color: #fcebd5;"></div>
+                    <div class="product-color" style="background-color: #3f5d6a;"></div>
+                </div>
+                <!--buy & price-->
+                <div class="buy-price">
+                    <!--price-->
+                    <p>80 TK</p>
+                    <!--btn---->
+                    <a href="#" class="buy-btn">Buy</a>
+                </div>
+            </a>
+            </div>
+            </li>
+            <!--==card===========================-->
+            <li class="item-a">
+            
+                <div class="product-box">
+                    <a href="#">
+                    <!--heading----->
+                    <strong>Akatsuki Mask</strong>
+                    <!--img--------->
+                    <img alt="" src="https://1.bp.blogspot.com/-6hGHM5Wv4kQ/YRuanh1VkrI/AAAAAAAAAAU/1kBoC0NyzpQaQqAcCHe5IxcPaFpYg3WeACLcBGAsYHQ/s320/2.png"/>
+                    <!--colors------>
+                    <div class="available-colors">
+                        <div class="product-color" style="background-color: #f6f2ef;"></div>
+                        <div class="product-color" style="background-color: #6e6d72;"></div>
+                        <div class="product-color" style="background-color: #164a6f;"></div>
+                        <div class="product-color" style="background-color: #daefd8;"></div>
+                        <div class="product-color" style="background-color: #bab2e6;"></div>
+                        <div class="product-color" style="background-color: #da3c3c;"></div>
+                    </div>
+                    <!--buy & price-->
+                    <div class="buy-price">
+                        <!--price-->
+                        <p>80 TK</p>
+                        <!--btn---->
+                        <a href="#" class="buy-btn">Buy</a>
+                    </div>
+                </a>
+                </div>
+                </li>
+                <!--==card===========================-->
+            <li class="item-a">
+            
+                <div class="product-box">
+                    <a href="#">
+                    <!--heading----->
+                    <strong>BLACKPINK Mask</strong>
+                    <!--img--------->
+                    <img alt="" src="/assets/img/shop/BlackPINK.png"/>
+                    <!--colors------>
+                    <div class="available-colors">
+                        <div class="product-color" style="background-color: #f3f3f3;"></div>
+                        <div class="product-color" style="background-color: #1d1d1e;"></div>
+                        <div class="product-color" style="background-color: #ba0d2f;"></div>
+                    </div>
+                    <!--buy & price-->
+                    <div class="buy-price">
+                        <!--price-->
+                        <p>80 TK</p>
+                        <!--btn---->
+                        <a href="/checkout.html" class="buy-btn">Buy</a>
+                    </div>
+                </a>
+                </div>
+                </li>
+                <!--==card===========================-->
+            <li class="item-a">
+            
+                <div class="product-box">
+                    <a href="#">
+                    <!--heading----->
+                    <strong>Gara (Naruto)  Mask</strong>
+                    <!--img--------->
+                    <img alt="" src="https://1.bp.blogspot.com/-r-PkmQTvnpE/YRua8ocscDI/AAAAAAAAAAg/JjGr_0vWuWwEc_tQ0KCbRvVI4jbvCZVSACLcBGAsYHQ/s320/4.jpg"/>
+                    <!--colors------>
+                    <div class="available-colors">
+                        <div class="product-color" style="background-color: #f9f6ef;"></div>
+                        <div class="product-color" style="background-color: #1f2020;"></div>
+                        <div class="product-color" style="background-color: #aee1cd;"></div>
+                        <div class="product-color" style="background-color: #ffe681;"></div>
+                        <div class="product-color" style="background-color: #d1cdda;"></div>
+                        <div class="product-color" style="background-color: #ba0c2e;"></div>
+                    </div>
+                    <!--buy & price-->
+                    <div class="buy-price">
+                        <!--price-->
+                        <p>80 TK</p>
+                        <!--btn---->
+                        <a href="#" class="buy-btn">Buy</a>
+                    </div>
+                </a>
+                </div>
+                </li>
+                <!--==card===========================-->
+            <li class="item-a">
+            
+                <div class="product-box">
+                    <a href="#">
+                    <!--heading----->
+                    <strong>DEATHNOTE (Kira) Mask</strong>
+                    <!--img--------->
+                    <img alt="" src="https://1.bp.blogspot.com/-vY1coOfNPz8/YRubHv4DS0I/AAAAAAAAAAo/QvFEuQoSZBM_i8vRdEA4B4rPpkEyIOXoQCLcBGAsYHQ/s320/5.png"/>
+                    <!--colors------>
+                    <div class="available-colors">
+                        <div class="product-color" style="background-color: #f4f4f4;"></div>
+                        <div class="product-color" style="background-color: #1d1d1e;"></div>
+                        <div class="product-color" style="background-color: #49aee6;"></div>
+                        <div class="product-color" style="background-color: #fe9a8b;"></div>
+                        <div class="product-color" style="background-color: #f9d045;"></div>
+                        <div class="product-color" style="background-color: #990211;"></div>
+                    </div>
+                    <!--buy & price-->
+                    <div class="buy-price">
+                        <!--price-->
+                        <p>80 TK</p>
+                        <!--btn---->
+                        <a href="#" class="buy-btn">Buy</a>
+                    </div>
+                </a>
+                </div>
+                </li>
+                <!--==end-card===========================-->
+                
+            </ul>
+               
+        </div>
+    </section>
+    <!--***first-slider-end****-->
+	
+	
+    <!--===JavaScript=======================================================-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"></script>
+    
+    <script type="text/javascript">
+    
+    $(document).ready(function() {
+    $('.autoWidth').lightSlider({
+        autoWidth:true,
+        onSliderLoad: function() {
+            $('.autoWidth').removeClass('cS-hidden');
+        } 
+    });  
+  });
+    
+    </script>
+    <!--***Javascript-end****-->
+  
+        
+        
+        
+       
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">Ninvir Craft</p>
+            <div class="footer__social">
+                <a href="https://facebook.com/ninvir24" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+               <!--===== FOOTER    <a href="https://instagram.com/tanver.247" class="footer__icon"><i class='bx bxl-instagram' ></i></a>=====-->
+                
+            </div>
+            <p class="footer__copy">&#169; RTH. All rigths reserved</p>
+        </footer>
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/main.js"></script>
+        
+
+    <!-- </body> -->
+</html>
