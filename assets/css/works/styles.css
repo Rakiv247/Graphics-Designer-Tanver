@@ -1,0 +1,71 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;800;900&display=swap");
+/*===== VARIABLES CSS =====*/
+
+* {
+    margin:0;
+    padding:0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family:'Poppins' , sans-serif;
+ width: 100%;
+ height:100vh;
+ background:#f6fbfd;
+}
+
+
+
+
+
+/*===== CLASS CSS ===== */
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    text-align:center;
+    margin: 20px auto;
+    width:90%;
+    
+}
+
+.menu{
+    margin: 10px 0;
+}
+
+.menu a{
+   font-size: 1.1rem;
+   margin: 0 1.5rem;
+   background-color:#753cf8;
+   color:#fff;
+   padding:8px 22px ;
+   
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    flex-wrap:wrap;
+}
+.store-item{
+    width: 100px;
+    padding:1rem ;
+}
+
+.store-item img{
+    width: 100px;
+    height:100px;
+   display: block;
+   box-shadow: 7px 7px 20px rgba(0,0,0,0.2);
+}
+
+
+
+
